@@ -3,7 +3,6 @@ import { Map, Marker, Popup, TileLayer, Tooltip } from 'react-leaflet';
 import axios from 'axios';
 import { commafy, friendlyDate } from '../utils/util';
 import Grid from '../components/Grid';
-import { Icon } from 'leaflet';
 
 class MapLayout extends Component {
     constructor(props) {
@@ -22,7 +21,6 @@ class MapLayout extends Component {
     getData() {
         axios.get('https://corona.lmao.ninja/v2/countries')
             .then(response => {
-                console.log('response ->', response);
                 this.setState({
                     data: response.data,
                     isLoaded: true
@@ -35,7 +33,6 @@ class MapLayout extends Component {
 
     mapData() {
         let { isLoaded, data } = this.state;
-        console.log('data', data);
         if (!isLoaded) {
             return (<div>Loading...</div>)
         }
