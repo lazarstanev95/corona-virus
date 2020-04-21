@@ -15,7 +15,14 @@ class MapLayout extends Component {
     }
 
     componentDidMount() {
+        this.intervalId = setInterval(() => {
+            this.getData()
+        }, 60000);
         this.getData();
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.intervalId);
     }
 
     getData() {

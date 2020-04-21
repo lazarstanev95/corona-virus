@@ -12,7 +12,14 @@ class Grid extends Component {
     }
 
     componentDidMount() {
+        this.intervalId = setInterval(() => {
+            this.getAllData();
+        }, 60000);
         this.getAllData();
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.intervalId);
     }
 
     getAllData() {
