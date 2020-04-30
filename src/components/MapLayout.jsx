@@ -52,6 +52,8 @@ class MapLayout extends Component {
                                 Active: {item.active ? commafy(item.active) : '-'} <br />
                                 Deaths: {item.deaths ? commafy(item.deaths) : '-'} <br />
                                 Recovered: {item.recovered ? commafy(item.recovered) : '-'} <br />
+                                Today cases: {item.todayCases ? commafy(item.todayCases) : '-'} <br />
+                                Today deaths: {item.todayDeaths ? commafy(item.todayDeaths) : '-'} <br />
                                 Last updated: {item.updated ? friendlyDate(item.updated) : '-'} <br />
                             </Popup>
                             <Tooltip direction="bottom">{item.country}</Tooltip>
